@@ -2,7 +2,7 @@
 </style>
 <template>
   <div>
-    李明雨，大沙雕。
+    李明雨傻逼。
   </div>
 </template>
 
