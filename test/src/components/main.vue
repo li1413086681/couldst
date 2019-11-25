@@ -2,7 +2,7 @@
 </style>
 <template>
   <div>
-    主页
+    李明雨，大沙雕。
   </div>
 </template>
 
