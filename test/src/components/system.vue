@@ -28,6 +28,7 @@
 <template>
   <div class="container">
     <div id="theleft">
+      <br />
       商家信息管理系统
       <div id="but">
         <button class="btn btn-warning">收&nbsp;&nbsp;藏&nbsp;&nbsp;夹</button><br /><br /><br />
@@ -37,7 +38,7 @@
       </div>
     </div>
     <div id="theright">
-      信息
+      <router-link to="/storeadd">添加信息</router-link>
     </div>
   </div>
 </template>
