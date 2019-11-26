@@ -34,11 +34,9 @@
         <button class="btn btn-warning">收&nbsp;&nbsp;藏&nbsp;&nbsp;夹</button><br /><br /><br />
         <button class="btn btn-info">我的商品</button><br /><br /><br />
         <button class="btn btn-success">订单处理</button><br /><br /><br />
-        <button class="btn btn-danger">&nbsp;广&nbsp;&nbsp;告&nbsp;?&nbsp;</button>
+        <button class="btn btn-danger">&nbsp;广&nbsp;&nbsp;告&nbsp;?&nbsp;</button><br /><br /><br />
+		    <button class="btn btn-default"><router-link to="/storeadd">添加商品</router-link></button>
       </div>
-    </div>
-    <div id="theright">
-      <router-link to="/storeadd">添加信息</router-link>
     </div>
   </div>
 </template>
