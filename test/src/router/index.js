@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Main from '@/components/main'
 import System from '@/components/system'
 import Storeadd from '@/components/storeadd'
+import Register from '@/components/register'
 
 Vue.use(Router)
 
@@ -21,6 +22,11 @@ export default new Router({
       path: '/Storeadd',
       name: 'Storeadd',
       component:Storeadd
+    },
+    {
+      path: '/Register',
+      name: 'Register',
+      component:Register
     },
   ]
 })
