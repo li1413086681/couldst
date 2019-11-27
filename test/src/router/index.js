@@ -4,6 +4,7 @@ import Main from '@/components/main'
 import System from '@/components/system'
 import Storeadd from '@/components/storeadd'
 import Register from '@/components/register'
+import imagesinfo from '@/components/imagesinfo'
 
 Vue.use(Router)
 
@@ -27,6 +28,11 @@ export default new Router({
       path: '/Register',
       name: 'Register',
       component:Register
+    },
+    {
+      path: '/imagesinfo',
+      name: 'imagesinfo',
+      component:imagesinfo
     },
   ]
 })
