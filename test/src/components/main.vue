@@ -58,10 +58,15 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
+	import imagesinfo from '@/components/imagesinfo';
   export default {
+    components:{
+			"imagesinfo":imagesinfo,
+		},
     data: function() {
       return {
         adname: "",
