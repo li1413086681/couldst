@@ -2,7 +2,6 @@
   .container {
     width: 1200px;
     padding: 0px;
-    background-color: forestgreen;
   }
   #top{
     width: 100%;
@@ -24,7 +23,7 @@
   #picture {
     width: 400px;
     height: 500px;
-    background-color:pink;
+
   }
 </style>
 
@@ -32,32 +31,113 @@
   <div class="container">
     <div id="top">
       <img src="../../static/imgs/title.png" />
+      你好{{adname.adname}}{{adname.stid}}
       <i id="home" class="glyphicon glyphicon-home"></i>
     </div>
     <div id="picture">
-      <input type="file" @change="upData($event)" ref="InputFile" name="files" />
+      <span>商品名称</span>
+      <el-input v-model="gdname"></el-input>
+      <span>信息</span>
+      <el-input v-model="gtkeywords"></el-input>
+      <span>图片</span>
+      <input type="file" @change="getfile($event)" />
+      <span>原始价格</span>
+      <el-input v-model="price"></el-input>
+
+      <br />
+      <el-button @click="insertgoods()">提交</el-button>
     </div>
   </div>
 </template>
 
 <script>
-  export default{
-    upData(event) {
-                var reader = new FileReader();
-                let fileData = this.$refs.InputFile.files[0];
-                reader.readAsDataURL(fileData);
-                let _this = this;
-                reader.onload = function(e) {
-                    //这里的数据可以使本地图片显示到页面
-                    _this.addimg = e.srcElement.result;
-                };
-                // 使用formapi打包
-                let formData = new FormData();
-                formData.append('file', fileData);
-                this.axios.post('/api/v1/uploads/course/img', formData).then(function(res) {
-                    console.log(res);
-                    _this.addimgtijiao = res.data.path;
-                });
-            }
+  export default {
+    data: function() {
+      return {
+        file1: "",
+        imgname: "",
+        gdname: "",
+        gtkeywords: "",
+        price: 0.0,
+
+        adname: ""
+
+      }
+    },
+    methods: {
+      getfile(event) {
+        this.file1 = event.target.files[0];
+        console.log(this.file1)
+      },
+      filea() {
+        var ob = this;
+        var formData = new FormData();
+        formData.append("file1", this.file1);
+        console.log(formData)
+        var url = "http://192.168.1.103:8087/mgj/filecontroller/file"
+        $.ajax(url, {
+          data: formData,
+          method: "post",
+          async: false,
+          contentType: false,
+          processData: false, //服务器返回json格式数据
+          xhrFields: {
+            "withCredentials": true
+          },
+
+          success: function(result) {
+            ob.imgname = result;
+          },
+
+        });
+      },
+      insertgoods() {
+        this.filea()
+        
+        var ob = this;
+        var url = "http://192.168.1.103:8087/mgj/mgjstore/insertgoods"
+        $.ajax(url, {
+          data: {
+            gdname: ob.gdname,
+            gtkeywords: ob.gtkeywords,
+            gimgurl: ob.imgname,
+            price: ob.price,
+            utid: 1
+          },
+
+          method: "post",
+          dataType: "json",
+          xhrFields: {
+            "withCredentials": true
+          },
+
+          success: function(result) {
+
+          }
+
+        });
+      },
+      getsession() {
+        var ob = this;
+        var url = "http://192.168.1.103:8087/mgj/mgjstore/getsession"
+        $.ajax(url, {
+          data: {},
+          method: "post",
+          dataType: "json",
+          xhrFields: {
+            "withCredentials": true
+          },
+
+          success: function(result) {
+            ob.adname = result
+          }
+
+        })
+      }
+    },
+    mounted: function() {
+      this.getsession();
+    }
+
   }
 </script>
