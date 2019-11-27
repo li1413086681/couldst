@@ -46,7 +46,7 @@
         <br />
         <br />
         <span>
-          <input class="in" type="password" placeholder="密码" />
+          <input class="in" placeholder="密码"/>
         </span>
         <br />
         <br />
@@ -60,4 +60,6 @@
 </template>
 
 <script>
+  export default{
+  }
 </script>

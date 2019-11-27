@@ -45,13 +45,11 @@
       <b><span v-model="storetel">联系电话:</span></b>
       <input type="text" name="tel" oninput="value=value.replace(/[^\d]/g,'')" maxlength="11" /><br /><br /><br />
       <b><span>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码&nbsp;:&nbsp;</span></b>
-      <input type="password" maxlength="16" v-model="password" @focus="passwordshow()" @focusout="passworddisplay()"/><br />
+      <el-input class="in" v-model="a" show-password style="height:40px;width:300px;"></el-input>
+      <br />
     </div>
     <div id="logname" v-if="lognametip">
       中英文均可，设置后不可更改
-    </div>
-    <div id="password" v-if="passwordtip">
-      最多16个字符
     </div>
     <button id="sub"><b>注 册</b></button>
   </div>
@@ -68,7 +66,8 @@
         storeaddress: "",
         storetel: "",
         lognametip:false,
-        passwordtip:false
+        passwordtip:false,
+        a:null
       };
     },
     methods: {
@@ -77,12 +76,6 @@
       },
       lognamedisplay(){
         this.lognametip=false
-      },
-      passwordshow(){
-        this.passwordtip=true
-      },
-      passworddisplay(){
-        this.passwordtip=false
       },
     },
   }
