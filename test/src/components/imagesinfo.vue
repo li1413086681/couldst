@@ -133,8 +133,7 @@
 						ob.count1=result.count;
 						for(var i in result.images){
 							result.images[i].hh={
-                "background-image":"url('http://127.0.0.1:8087/mgj/tp/00ad41a6ab087fe5b6e1ee2d7858_640_900.cj.jpg')"
-								// "background-image":"url('http://127.0.0.1:8087/aaa/"+result.images[i].gimgurl+"')"
+								"background-image":"url('http://127.0.0.1:8087/mgj/tp/"+result.images[i].gimgurl+"')"
 							};
 							ob.infoes.push(result.images[i]);
 						};
