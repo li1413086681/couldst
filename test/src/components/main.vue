@@ -60,4 +60,47 @@
 </template>
 
 <script>
+  export default{
+    data:function(){
+      return{
+
+      }
+    },
+    methods:{
+      login() {
+        var ob = this;
+        var url = "http://192.168.1.103:8087/mgj/mgjstore/login"
+        $.ajax(url, {
+          data: {
+            adname: ob.logname,
+          },
+          method: "post",
+          dataType: "json", //服务器返回json格式数据
+          xhrFields: {
+            "withCredentials": true
+          },
+          success: function(result) {
+            if (result) {
+              ob.adnametest = false
+              ob.adnametext = "此用户已存在"
+            } else {
+              ob.adnametest = true
+              ob.adnametext = "此用户可用"
+            }
+            if (ob.adname = "") {
+              ob.adnametext = ""
+            }
+
+
+
+
+          },
+
+        });
+      }
+    },
+    mounted:function(){
+
+    }
+  }
 </script>
