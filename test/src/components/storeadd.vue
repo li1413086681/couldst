@@ -24,7 +24,7 @@
   #picture {
     width: 400px;
     height: 500px;
-    background-color: saddlebrown;
+    background-color:pink;
   }
 </style>
 
@@ -35,9 +35,29 @@
       <i id="home" class="glyphicon glyphicon-home"></i>
     </div>
     <div id="picture">
+      <input type="file" @change="upData($event)" ref="InputFile" name="files" />
     </div>
   </div>
 </template>
 
 <script>
+  export default{
+    upData(event) {
+                var reader = new FileReader();
+                let fileData = this.$refs.InputFile.files[0];
+                reader.readAsDataURL(fileData);
+                let _this = this;
+                reader.onload = function(e) {
+                    //这里的数据可以使本地图片显示到页面
+                    _this.addimg = e.srcElement.result;
+                };
+                // 使用formapi打包
+                let formData = new FormData();
+                formData.append('file', fileData);
+                this.axios.post('/api/v1/uploads/course/img', formData).then(function(res) {
+                    console.log(res);
+                    _this.addimgtijiao = res.data.path;
+                });
+            }
+  }
 </script>
