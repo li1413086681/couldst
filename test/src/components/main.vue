@@ -42,15 +42,16 @@
     </div>
     <div class="main">
       <div class="login">
-        <input class="in" placeholder="用户名" />
+        <span>{{text}}</span><br />
+        <input class="in" placeholder="用户名" v-model="adname" />
         <br />
         <br />
         <span>
-          <input class="in" type="password" placeholder="密码" />
+          <input class="in" type="password" placeholder="密码" v-model="adpassword" />
         </span>
         <br />
         <br />
-        <button id="log">登录</button>
+        <button id="log"  @click="login()">登录</button>
         <br />
         <router-link to="/system">入口</router-link>
         <router-link to="/register">注册</router-link>
@@ -60,19 +61,22 @@
 </template>
 
 <script>
-  export default{
-    data:function(){
-      return{
-
+  export default {
+    data: function() {
+      return {
+        adname: "",
+        adpassword: "",
+        text:""
       }
     },
-    methods:{
+    methods: {
       login() {
         var ob = this;
         var url = "http://192.168.1.103:8087/mgj/mgjstore/login"
         $.ajax(url, {
           data: {
-            adname: ob.logname,
+            adname: ob.adname,
+            password: ob.adpassword
           },
           method: "post",
           dataType: "json", //服务器返回json格式数据
@@ -80,18 +84,19 @@
             "withCredentials": true
           },
           success: function(result) {
-            if (result) {
-              ob.adnametest = false
-              ob.adnametext = "此用户已存在"
-            } else {
-              ob.adnametest = true
-              ob.adnametext = "此用户可用"
-            }
-            if (ob.adname = "") {
-              ob.adnametext = ""
-            }
+            if (result == 0) {
+              ob.$router.push("storeadd")
 
-
+            }
+            if (result == 1) {
+              ob.text = "用户不存在"
+            }
+            if (result == 2) {
+              ob.text = "密码错误"
+            }
+            if (result == 3) {
+              ob.text = "账号封禁，请联系管理员"
+            }
 
 
           },
@@ -99,7 +104,7 @@
         });
       }
     },
-    mounted:function(){
+    mounted: function() {
 
     }
   }

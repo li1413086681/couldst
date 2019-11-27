@@ -34,7 +34,8 @@
       <img src="../../static/imgs/title.png" />
       <i id="home" class="glyphicon glyphicon-home"></i>
     </div>
-    <div id="picture"></div>
+    <div id="picture">
+    </div>
   </div>
 </template>
 
