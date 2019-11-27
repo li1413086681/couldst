@@ -33,10 +33,6 @@
 </style>
 
 <template>
-<<<<<<< HEAD
-  <div>
-    李明雨大傻逼          憨憨。
-=======
   <div class="container">
     <div style="position: absolute;top: 20px;right: 300px;">
       <a class="tab">用户登录</a>
@@ -61,7 +57,6 @@
         <router-link to="/register">注册</router-link>
       </div>
     </div>
->>>>>>> d2f94969fa9e463f94574a9dff6ec8cf02c691a2
   </div>
 </template>
 
