@@ -23,7 +23,7 @@ export default new Router({
       component: Main
     },
     {
-        path: '/',
+        path: '/Main1',
         name: 'Main1',
         component: Main1
       },
@@ -66,21 +66,21 @@ export default new Router({
      	path: '/login_1',
      	name: 'login_1',
      	component: login_1,
-    },  
+    },
     {
      	path: '/cart',
      	name: 'cart',
      	component: cart,
-    },    
+    },
     {
      	path: '/order',
      	name: 'order',
      	component: order,
-    }, 
+    },
     {
      	path: '/orderlist',
      	name: 'orderlist',
      	component: orderlist,
-    },     
+    },
   ]
 })

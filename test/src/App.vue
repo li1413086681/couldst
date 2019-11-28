@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="container" id="firstweb">
     <router-view></router-view>
   </div>
 </template>
@@ -8,11 +8,12 @@
 </script>
 
 <style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-  }
+	#firstweb{
+			width: 100%;
+			height: 100%;
+			padding: 0px;
+	}
+	.container{
+		padding: 0px;
+	}
 </style>
