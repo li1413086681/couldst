@@ -1,9 +1,16 @@
 <style>
   .container{
     width:1366px;
+    padding: 0px;
   }
   .main{
      width: 100%;
+     height: 500px;
+     background-position-x: 100px;
+     background-size:90%;
+     background-image: url(../../static/imgs/login3.jpg);
+     background-color:pink;
+     margin-top: -20px;
   }
   .login{
     width: 356px;
@@ -90,7 +97,7 @@
           },
           success: function(result) {
             if (result == 0) {
-              ob.$router.push("storeadd")
+              ob.$router.push("system")
 
             }
             if (result == 1) {

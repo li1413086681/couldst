@@ -23,6 +23,12 @@
   #but > button{
     outline: none;
   }
+  .fuge{
+    color: white;
+  }
+  .fuge:hover{
+    color: white;
+  }
 </style>
 
 <template>
@@ -35,7 +41,8 @@
         <button class="btn btn-info">我的商品</button><br /><br /><br />
         <button class="btn btn-success">订单处理</button><br /><br /><br />
         <button class="btn btn-danger">&nbsp;广&nbsp;&nbsp;告&nbsp;?&nbsp;</button><br /><br /><br />
-		    <button class="btn btn-default"><router-link to="/storeadd">添加商品</router-link></button>
+		    <button class="btn btn-default"><router-link to="/storeadd">添加商品</router-link></button><br /><br /><br />
+        <a class="fuge" href="http://127.0.0.1:8086/#/">退出登录</a>
       </div>
     </div>
   </div>
