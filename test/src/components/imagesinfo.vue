@@ -8,7 +8,7 @@
 			    <div class="ff">
 			    	<div class="font1">
 			    		<p class="glyphicon glyphicon-thumbs-up mm"></p><br />
-			    		<p class="glyphicon glyphicon-star mm" :class="{'kk':GoodscollectionKey.indexOf(a.gdid)!=-1}"  @click="collection(a.gdid,$event,i)" v-if="user_1.length!=0" >
+			    		<p class="glyphicon glyphicon-star mm" :class="{'kk':GoodscollectionKey.indexOf(a.gdid)!=-1}"  @click="collection(a.gdid,$event,i)"  >
 			    			<span style="left: 20px;background-color: red;display: inline-block;position: absolute;font-size: 20px;color: white;border-radius:50%;border: 3px solid white;width: 30px;height: 30px;">
 			    				{{list[i]}}
 			    			</span>
@@ -40,7 +40,7 @@
 
 		mounted(){
 			var ob=this;
-			// ob.session();
+			ob.session();
 			ob.getimgs(1);
 
 
@@ -80,40 +80,46 @@
 					}
 				});
 			},
-			// session(){
-			// 	var ob=this;
-			// 	var url="http://192.168.1.103:8087/mgj/mgj/getsession";
-			// 	$.ajax(url,{
-			// 		xhrFields: {"withCredentials": true},
-			// 		data:{"keywords":ob.keywords},
-			// 		dataType:"json",
-			// 		success: function(result) {
-			// 			ob.user_1=result;
-			// 			if(ob.user_1.length!=0){
-			// 				ob.changecolor();
-			// 			}
-			// 		}
-			// 	});
-			// },
+			session(){
+				var ob=this;
+				var url="http://127.0.0.1:8087/mgj/mgj/getsession";
+				$.ajax(url,{
+					xhrFields: {"withCredentials": true},
+					data:{"keywords":ob.keywords},
+					dataType:"json",
+					success: function(result) {
+						ob.user_1=result;
+						if(ob.user_1.length!=0){
+							ob.changecolor();
+							ob.list=[];
+						}
+					}
+				});
+			},
 			collection(gdid,event,i){
 				event.stopPropagation();
 				var ob=this;
-				var url="http://127.0.0.1:8087/mgj/mgj/insertcollection";
-				$.ajax(url,{
-					xhrFields: {"withCredentials": true},
-					async:false,
-					data:{"gdid":gdid},
-					dataType:"json",
-					success: function(result) {
+				if(ob.user_1.length!=0){
+					var url="http://127.0.0.1:8087/mgj/mgj/insertcollection";
+					$.ajax(url,{
+						xhrFields: {"withCredentials": true},
+						async:false,
+						data:{"gdid":gdid},
+						dataType:"json",
+						success: function(result) {
 
+						}
+					})
+					ob.changecolor();
+					if(ob.GoodscollectionKey.indexOf(gdid)!=-1){
+						ob.list[i]=ob.list[i]+1
+					}else{
+						ob.list[i]=ob.list[i]-1
 					}
-				})
-				ob.changecolor();
-				if(ob.GoodscollectionKey.indexOf(gdid)!=-1){
-					ob.list[i]=ob.list[i]+1
 				}else{
-					ob.list[i]=ob.list[i]-1
+					ob.$router.push({"name":"login_1"});
 				}
+
 
 			},
 			gotogoodsinfo(gdid){
@@ -198,6 +204,7 @@
 	}
 	.box:hover .jj{
 		top:0%;
+		/*box-shadow: 10px -30px 96px 50px black inset;	*/
 		background-color: #000000;
 		opacity: 0.5;
 	}
