@@ -20,13 +20,13 @@ Vue.use(Router)
 export default new Router({
   routes: [{
       path: '/',
-      name: 'main1',
-      component: main1
+      name: 'main',
+      component: main
     },
     {
-        path: '/Main',
-        name: 'Main',
-        component: Main
+        path: '/Main1',
+        name: 'Main1',
+        component: Main1
       },
      {
       path: '/Lunbo',
