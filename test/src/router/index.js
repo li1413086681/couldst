@@ -13,20 +13,26 @@ import login_1 from '@/components/login_1'
 import cart from '@/components/cart'
 import order from '@/components/order'
 import orderlist from '@/components/orderlist'
+import Lunbo from '@/components/lunbo'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [{
       path: '/',
-      name: 'Main',
-      component: Main
+      name: 'main1',
+      component: main1
     },
     {
-        path: '/Main1',
-        name: 'Main1',
-        component: Main1
+        path: '/Main',
+        name: 'Main',
+        component: Main
       },
+     {
+      path: '/Lunbo',
+      name: 'Lunbo',
+      component:Lunbo
+    },
     {
       path: '/System',
       name: 'System',

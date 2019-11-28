@@ -41,9 +41,18 @@
       <el-input v-model="gtkeywords"></el-input>
       <span>图片</span>
       <input type="file" @change="getfile($event)" />
-      <span>原始价格</span>
-      <el-input v-model="price"></el-input>
-
+      <span>青铜价格</span>
+      <el-input v-model="price1"></el-input>
+      <span>白银价格</span>
+      <el-input v-model="price2"></el-input>
+      <span>黄金价格</span>
+      <el-input v-model="price3"></el-input>
+      <span>白金价格</span>
+      <el-input v-model="price4"></el-input>
+      <span>钻石价格</span>
+      <el-input v-model="price5"></el-input>
+      <span>王者价格</span>
+      <el-input v-model="price6"></el-input>
       <br />
       <el-button @click="insertgoods()">提交</el-button>
     </div>
@@ -59,8 +68,14 @@
         gdname: "",
         gtkeywords: "",
         price: 0.0,
-
-        adname: ""
+        list: [],
+        adname: "",
+        price1: 0.0,
+        price2: 0.0,
+        price3: 0.0,
+        price4: 0.0,
+        price5: 0.0,
+        price6: 0.0
 
       }
     },
@@ -92,17 +107,40 @@
         });
       },
       insertgoods() {
-        this.filea()
-        
+        var goodsprice = [{
+            "utid": 1,
+            "price": this.price1
+          }, {
+            "utid": 2,
+            "price": this.price2
+          }, {
+            "utid": 3,
+            "price": this.price3
+          },
+          {
+            "utid": 4,
+            "price": this.price4
+          },
+          {
+            "utid": 5,
+            "price": this.price5
+          },
+          {
+            "utid": 6,
+            "price": this.price6
+          }
+        ]
+
+        this.filea();
+
         var ob = this;
         var url = "http://192.168.1.103:8087/mgj/mgjstore/insertgoods"
         $.ajax(url, {
           data: {
+            str: JSON.stringify(goodsprice),
             gdname: ob.gdname,
             gtkeywords: ob.gtkeywords,
             gimgurl: ob.imgname,
-            price: ob.price,
-            utid: 1
           },
 
           method: "post",
@@ -110,13 +148,13 @@
           xhrFields: {
             "withCredentials": true
           },
-
           success: function(result) {
 
           }
 
         });
       },
+ 
       getsession() {
         var ob = this;
         var url = "http://192.168.1.103:8087/mgj/mgjstore/getsession"
