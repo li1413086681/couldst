@@ -5,7 +5,7 @@ import System from '@/components/system'
 import Storeadd from '@/components/storeadd'
 import Register from '@/components/register'
 import imagesinfo from '@/components/imagesinfo'
-
+import Lunbo from '@/components/lunbo'
 Vue.use(Router)
 
 export default new Router({
@@ -13,6 +13,11 @@ export default new Router({
       path: '/',
       name: 'Main',
       component: Main
+    },
+    {
+      path: '/Lunbo',
+      name: 'Lunbo',
+      component:Lunbo
     },
     {
       path: '/System',
