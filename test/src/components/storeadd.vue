@@ -17,16 +17,14 @@
     width: 400px;
     height: 500px;
     margin: auto;
-  }
-  el-input{
-    margin: auto;
+    font-size: 20px;
   }
 </style>
 
 <template>
   <div class="container">
     <div id="top">
-      <h3>你好{{adname.adname}}{{adname.stid}}</h3>
+      <center><h2>你好{{adname.adname}}{{adname.stid}}</h2></center>
     </div>
     <div id="info">
       <b>商品名称</b>
@@ -48,7 +46,7 @@
       <b>王者价格</b>
       <el-input v-model="price6"></el-input><br /><br />
       <br />
-      <el-button style="width: 150px; color: white;background-color: #3385FF;" @click="insertgoods()">提交</el-button>
+      <center><el-button style="width: 250px; color: white;background-color: #3385FF;font-size: 24px;" @click="insertgoods()">提交</el-button></center>
     </div>
   </div>
 </template>

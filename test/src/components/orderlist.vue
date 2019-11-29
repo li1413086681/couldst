@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<table>
+		<table class="table table-bordered" style="font-size: 20px;">
 			<thead>
 				<tr>
 					<td>订单编号</td>
@@ -12,7 +12,7 @@
 				<tr v-for="a in list">
 					<td>{{a.ofid}}</td>
 					<td>
-						<a class="btn btn-link" @click="pay(a.ofid)">付款</a>					
+						<a class="btn btn-link" @click="pay(a.ofid)">付款</a>
 					</td>
 					<td>{{a.ofdate}}</td>
 				</tr>
@@ -33,18 +33,18 @@
 			pay(ofid){
 				window.open("http://127.0.0.1:8087/mgj/ali/pay?ofid="+ofid);
 			},
-			
+
 		},
 		mounted(){
-			var ob=this;	
+			var ob=this;
 			var url="http://127.0.0.1:8087/mgj/mgj/selectorderinfobyuserid";
 			$.ajax(url,{
-				xhrFields: {"withCredentials": true}, 
-				dataType:"json", 
+				xhrFields: {"withCredentials": true},
+				dataType:"json",
 				success: function(result) {
-					ob.list=result;	
+					ob.list=result;
 				}
-			})			
+			})
 		}
 	}
 </script>

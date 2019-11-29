@@ -1,30 +1,36 @@
 <style>
   .container {
-    width: 1366px;
+    width: 1705px;
     padding: 0px;
   }
 
   #theleft {
-    height: 625px;
+    height: 781px;
     width: 15%;
     color: white;
     background-color: #1B6D85;
     float: left;
+    padding-left: 30px;
   }
 
   #theright {
     height: 625px;
     width: 85%;
     float: left;
+    text-align: center;
   }
   #but {
     margin-top: 50px;
+    margin-left: 40px;
   }
   #but > button{
     outline: none;
+    font-size: 20px;
   }
   .fuge{
     color: white;
+    margin-left: 12px;
+    font-size: 20px;
   }
   .fuge:hover{
     color: white;
@@ -35,7 +41,7 @@
   <div class="container">
     <div id="theleft">
       <br />
-      商家信息管理系统
+      <b style="font-size: 25px;">商家信息管理系统</b>
       <div id="but">
         <button class="btn btn-warning">收&nbsp;&nbsp;藏&nbsp;&nbsp;夹</button><br /><br /><br />
         <button class="btn btn-info">我的商品</button><br /><br /><br />
