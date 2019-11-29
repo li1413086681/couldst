@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Main1 from '@/components/main1'
-import System from '@/components/system'
+
 import Storeadd from '@/components/storeadd'
 import Register from '@/components/register'
 import imagesinfo from '@/components/imagesinfo'
