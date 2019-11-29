@@ -1,6 +1,6 @@
 <style>
   .container{
-    width:1705px;
+    width:100%;
     padding: 0px;
   }
   .main{

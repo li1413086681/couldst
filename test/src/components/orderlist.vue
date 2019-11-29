@@ -12,7 +12,7 @@
 				<tr v-for="a in list">
 					<td>{{a.ofid}}</td>
 					<td>
-						<a class="btn btn-link" @click="pay(a.ofid)">付款</a>
+						<a class="btn btn-link" @click="pay(a.ofid)" style="font-size: 20px;">付款</a>
 					</td>
 					<td>{{a.ofdate}}</td>
 				</tr>

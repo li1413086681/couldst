@@ -1,6 +1,6 @@
 <style>
   .container{
-    width:1366px;
+    width:100%;
   }
   #center{
     font-size: 20px;
