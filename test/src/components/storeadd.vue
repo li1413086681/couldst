@@ -65,7 +65,7 @@
     data: function() {
       return {
         file1: "",
-        imgname: "",
+        imgname: [],
         gdname: "",
         gtkeywords: "",
         price: 0.0,
