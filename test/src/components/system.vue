@@ -1,26 +1,20 @@
 ]<style>
-  .container {
+  .containerd {
     width: 100%;
-    height: 775px;
+    height: 769px;
     padding: 0px;
-    background-color: firebrick;
     display: inline-block;
+    overflow: auto;
   }
 
   #theleft {
-    height:100%;
     width: 15%;
     color: white;
     background-color: #1B6D85;
     padding-left: 30px;
     float: left;
-  }
-
-  #theright {
-    width: 85%;
-    text-align: center;
-    background-color: aqua;
-    float: left;
+    height:775px;
+    position: fixed;
   }
   #but {
     margin-top: 50px;
@@ -41,7 +35,7 @@
 </style>
 
 <template>
-  <div class="container">
+  <div class="containerd">
     <div id="theleft">
       <br />
       <b style="font-size: 25px;">商家信息管理系统</b>
@@ -54,9 +48,7 @@
         <a class="fuge" href="http://127.0.0.1:8086/#/">退出登录</a>
       </div>
     </div>
-    <div id="theright">
       <router-view></router-view>
-    </div>
   </div>
 </template>
 
