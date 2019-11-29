@@ -64,7 +64,7 @@
     data: function() {
       return {
         file1: "",
-        imgname: "",
+        imgname: [],
         gdname: "",
         gtkeywords: "",
         price: 0.0,
@@ -154,7 +154,7 @@
 
         });
       },
- 
+
       getsession() {
         var ob = this;
         var url = "http://192.168.1.103:8087/mgj/mgjstore/getsession"
