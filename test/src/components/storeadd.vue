@@ -19,6 +19,12 @@
     margin: auto;
     font-size: 20px;
   }
+  #fuge{
+    font-size: 20px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
 </style>
 
 <template>
@@ -47,6 +53,9 @@
       <el-input v-model="price6"></el-input><br /><br />
       <br />
       <center><el-button style="width: 250px; color: white;background-color: #3385FF;font-size: 24px;" @click="insertgoods()">提交</el-button></center>
+    </div>
+    <div id="fuge">
+      <a href="http://127.0.0.1:8086/#/system">返回</a>
     </div>
   </div>
 </template>
