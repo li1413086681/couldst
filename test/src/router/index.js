@@ -36,13 +36,14 @@ export default new Router({
     {
       path: '/System',
       name: 'System',
-      component:System
+      component:System,
+      children: [{
+        path: '/system/storeadd',
+        name: 'Storeadd',
+        component:Storeadd
+      }]
     },
-    {
-      path: '/Storeadd',
-      name: 'Storeadd',
-      component:Storeadd
-    },
+
     {
       path: '/Register',
       name: 'Register',

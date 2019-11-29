@@ -1,24 +1,26 @@
 ]<style>
   .container {
     width: 100%;
+    height: 775px;
     padding: 0px;
+    background-color: firebrick;
+    display: inline-block;
   }
 
   #theleft {
-    height: 781px;
+    height:100%;
     width: 15%;
     color: white;
     background-color: #1B6D85;
-    float: left;
     padding-left: 30px;
+    float: left;
   }
 
   #theright {
-    height: 625px;
     width: 85%;
-    float: left;
     text-align: center;
-    background-color: saddlebrown;
+    background-color: aqua;
+    float: left;
   }
   #but {
     margin-top: 50px;
@@ -48,11 +50,13 @@
         <button class="btn btn-info">我的商品</button><br /><br /><br />
         <button class="btn btn-success">订单处理</button><br /><br /><br />
         <button class="btn btn-danger">&nbsp;广&nbsp;&nbsp;告&nbsp;?&nbsp;</button><br /><br /><br />
-		    <button class="btn btn-default"><router-link to="/storeadd">添加商品</router-link></button><br /><br /><br />
+		    <button class="btn btn-default"><router-link to="/system/storeadd">添加商品</router-link></button><br /><br /><br />
         <a class="fuge" href="http://127.0.0.1:8086/#/">退出登录</a>
       </div>
     </div>
-    <div id="theright"></div>
+    <div id="theright">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
