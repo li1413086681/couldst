@@ -1,4 +1,4 @@
-<style>
+]<style>
   .container {
     width: 100%;
     padding: 0px;
@@ -19,7 +19,7 @@
     float: left;
     text-align: center;
   }
-  #but {
+  .but {
     margin-top: 50px;
     margin-left: 40px;
   }
@@ -41,8 +41,13 @@
   <div class="container">
     <div id="theleft">
       <br />
+<<<<<<< HEAD
+      商家信息管理系统
+      <div class="but">
+=======
       <b style="font-size: 25px;">商家信息管理系统</b>
       <div id="but">
+>>>>>>> 4bf87ef6de492653bf4c9ac12a0a75b19c2d4a36
         <button class="btn btn-warning">收&nbsp;&nbsp;藏&nbsp;&nbsp;夹</button><br /><br /><br />
         <button class="btn btn-info">我的商品</button><br /><br /><br />
         <button class="btn btn-success">订单处理</button><br /><br /><br />
