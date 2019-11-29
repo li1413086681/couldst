@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Main1 from '@/components/main1'
+import main1 from '@/components/main1'
 import System from '@/components/system'
 import Storeadd from '@/components/storeadd'
 import Register from '@/components/register'
@@ -19,14 +19,14 @@ Vue.use(Router)
 
 export default new Router({
   routes: [{
-      path: '/',
+      path: '/main',
       name: 'main',
       component: main
     },
     {
-        path: '/Main1',
-        name: 'Main1',
-        component: Main1
+        path: '/',
+        name: 'main1',
+        component: main1
       },
      {
       path: '/Lunbo',

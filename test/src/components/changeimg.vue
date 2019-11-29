@@ -22,11 +22,11 @@
 				show1:false,
 				index_1:-1,
 				images:[
-					"background-image:url(../../static/imgs/FSH-1572278007297-20chomecollect.jpg)",
-					"background-image:url(../../static/imgs/timg[222].jpg)",
-					"background-image:url(../../static/imgs/FSH-1573036648554-075i01.jpg)"
+					"background-image:url(../../static/n1.jpg)",
+					"background-image:url(../../static/n2.jpg)",
+					"background-image:url(../../static/n3.jpg)"
 				],
-				imagee:"background-image:url(../../imgs/static/FSH-1572278007297-20chomecollect.jpg)",
+				imagee:"background-image:url(../../static/n1.jpg)",
 				num:0
 			}
 		},
@@ -141,12 +141,12 @@
 	#images1{
 		height: 590px;
 		width:70%;
-		background-size: 100%;
+		background-size: 100% 100%;
 		background-color: pink;
 		transition: all 1s;
 		z-index: 1;
 		float: left;
-
+    background-repeat:no-repeat;
 	}
 	#images2{
 		width: 30%;
