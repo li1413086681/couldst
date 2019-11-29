@@ -1,17 +1,25 @@
 <style>
   .container{
-    width:1366px;
+    width:100%;
+    padding: 0px;
   }
   .main{
      width: 100%;
+     height: 658px;
+     background-size:90%;
+     background-image: url(../../static/imgs/login3.jpg);
+     background-color:pink;
+     margin-top: -20px;
   }
   .login{
-    width: 356px;
-    height: 380px;
-    padding-top: 80px;
+    width: 400px;
+    height: 436px;
+    padding-top: 60px;
     position: absolute;
-    right: 40px;
+    right: 20px;
     background-color:#FEDCDA;
+    opacity: 0.9;
+    padding-left:40px;
   }
   #log{
     background-color: #FD6582;
@@ -34,15 +42,16 @@
 
 <template>
   <div class="container">
-    <div style="position: absolute;top: 20px;right: 300px;">
-      <a class="tab">用户登录</a>
+    <div style="position: absolute;top: 20px;right: 250px;">
+      <a class="tab" href="http://127.0.0.1:8086/#/login_1">切换为用户登录</a>
     </div>
     <div style="margin-top:70px;">
       <hr style="border: solid 1px;" />
     </div>
     <div class="main">
       <div class="login">
-        <span>{{text}}</span><br />
+        <h3 style="color:sienna;">商家登录</h3>
+        <br /><br />
         <input class="in" placeholder="用户名" v-model="adname" />
         <br />
         <br />
@@ -51,12 +60,14 @@
         </span>
         <br />
         <br />
+        <span>{{text}}</span><br />
         <button id="log"  @click="login()">登录</button>
         <br />
         <router-link to="/system">入口</router-link>
         <router-link to="/register">注册</router-link>
       </div>
     </div>
+    <imagesinfo></imagesinfo>
   </div>
 
 </template>
@@ -90,7 +101,7 @@
           },
           success: function(result) {
             if (result == 0) {
-              ob.$router.push("storeadd")
+              ob.$router.push("system")
 
             }
             if (result == 1) {
