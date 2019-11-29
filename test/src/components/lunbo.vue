@@ -11,8 +11,8 @@
         bggimg: [],
         show: 0,
         time1:1000,
-        time2:5000,
-        time3:8000,
+        time2:1000,
+        time3:1000,
 
       }
     },
