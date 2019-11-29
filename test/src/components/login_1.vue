@@ -1,42 +1,101 @@
+<style>
+  .container{
+    width:1705px;
+    padding: 0px;
+  }
+  #in{
+      width:400px;
+      position: absolute;
+      top: 140px;
+      right: 20px;
+      background-color:#FEDCDA;
+      opacity: 0.9;
+      padding-left:40px;
+  }
+  #backcolor{
+    width: 100%;
+    height: 680px;
+    background-image: url(../../static/imgs/login.png);
+    margin-top: -20px;
+    background-size: 150%;
+    background-position-x:-130px;
+  }
+  #btn123{
+  	height: 40px;
+  	width: 50%;
+  	background-color: orangered;
+  	border: 0px solid white;
+  	color: white;
+  	font-size: 16px;
+  }
+  #table_1 tr td{
+  	padding: 10px;
+  	font-size: 20px;
+  }
+  #table_1 input{
+  	outline: none;
+  	border-radius: 5px;
+  	border: 1px solid orangered;
+  	height: 40px;
+  	width: 70%;
+  	font-size: 18px;
+  	background-color:transparent;
+  	color: #000000;
+    }
+    .tab{
+      font-size: 25px;
+    }
+    .tab:hover{
+      text-decoration: none;
+      color:#337AB7;
+    }
+</style>
+
 <template>
-	<div class="container" style="width: 100%;height: 600px;background-image: url(https://s17.mogucdn.com/p2/170105/upload_541i9di2b3icf9j13f24e0bg7b1i6_1920x600.png);margin-top: 7%;">
-		<div style="height: 500px;width: 500px;float: right;margin-top: 40px;margin-right: 40px;border-radius: 5px">
-			<div style="height: 500px;width: 500px;position: absolute;border-radius: 5px;background-color:white;opacity: 0.8;"></div>
-			<div style="height: 500px;width: 500px;position: absolute;border-radius: 5px;" >
+	<div class="container">
+		<div style="position: absolute;top: 20px;right: 250px;">
+		  <a class="tab" href="http://127.0.0.1:8086/#/main">切换为商家登录</a>
+		</div>
+    <div style="margin-top:70px;">
+      <hr style="border: solid 1px;" />
+    </div>
+		<div>
+			<div id="backcolor"></div>
+			<div id="in">
 				<table class="table " id="table_1" style="margin-top: 40px;">
-					<tr>	
+					<tr>
 						<td>用户名</td>
 						<td v-if="status==1">{{result_2}}</td>
 					</tr>
 					<tr>
 						<td style="text-align: center;" colspan="2">
 							<input type="text" v-model="logname" />
-						</td>	
+						</td>
 					</tr>
-					<tr>	
+					<tr>
 						<td>密码</td>
 						<td v-if="status==2">{{result_2}}</td>
 					</tr>
 					<tr>
 						<td style="text-align: center;" colspan="2">
 							<input type="password" v-model="password_1"/>
-						</td>	
+						</td>
 					</tr>
 					<tr>
 						<td>验证码</td>
 						<td v-if="!kaptcha_check">验证码错误</td>
 					</tr>
 					<tr>
-						<td style="text-align: center;"><input type="text" v-model="kaptcha" style="margin-left: 27px;width: 150px;" /></td>		
+						<td style="text-align: center;"><input type="text" v-model="kaptcha" style="margin-left: 27px;width: 150px;" /></td>
 						<td style="text-align: left;margin-right: 40px;"><kaptcha></kaptcha></td>
 					</tr>
 					<tr>
-						<td style="text-align: center;" colspan="2"><button @click="login_jj()" id="btn123">登录</button><span v-if="status==3">{{result_2}}</span></td>			
+						<td style="text-align: center;" colspan="2"><button @click="login_jj()" id="btn123">登录</button><span v-if="status==3">{{result_2}}</span></td>
 					</tr>
 				</table>
 			</div>
-		</div>	
-	</div>	
+		</div>
+	</div>
 </template>
 
 <script>
@@ -74,12 +133,12 @@
 				};
 				var url="http://127.0.0.1:8087/mgj/mgj/login";
 				$.ajax(url,{
-					xhrFields: {"withCredentials": true}, 
+					xhrFields: {"withCredentials": true},
 					data:{
 						"logname":ob.logname,
 						"password":ob.password_1
 					},
-					dataType:"json", 
+					dataType:"json",
 					success: function(result) {
 						ob.status=result;
 						ob.result_2=ob.result_1[result];
@@ -88,53 +147,26 @@
 						}
 					}
 				});
-				
+
 			},
 			checkkaptcha(){
 				var ob=this;
 				var url="http://127.0.0.1:8087/mgj/mgj/kaptch";
 				$.ajax(url,{
-					xhrFields: {"withCredentials": true}, 
+					xhrFields: {"withCredentials": true},
 					async:false,
-					data:{"jj":ob.kaptcha}, 
-					dataType:"json", 
+					data:{"jj":ob.kaptcha},
+					dataType:"json",
 					success: function(result) {
-						ob.jjj=result;				
+						ob.jjj=result;
 					}
 				});
 			},
-			
+
 		},
 		mounted(){
 			var ob=this;
-			
+
 		}
 	}
 </script>
-
-<style>
-	#btn123{
-		height: 40px;
-		width: 50%;
-		background-color: orangered;
-		border: 0px solid white;
-		color: white;
-		font-size: 16px;
-	}
-	#table_1 tr td{
-		padding: 10px;
-		font-size: 20px;
-	}
-	#table_1 input{
-		outline: none;
-		border-radius: 5px;
-		border: 1px solid orangered;
-		height: 40px;
-		width: 70%;
-		font-size: 18px;
-		background-color:transparent;
-		color: #000000;
-		
-		
-	}
-</style>

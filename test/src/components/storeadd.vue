@@ -6,55 +6,47 @@
   #top{
     width: 100%;
     height: 90px;
-    background-color: white;
-    padding-top: 12px;
-  }
-  #top > img{
-    width: 120px;
-    height: 85px;
-    margin-left: -1000px;
-    margin-top: -12px;
+    padding-top:0px;
   }
   #home{
     font-size: 40px;
     position:relative;
     left:1000px;
   }
-  #picture {
+  #info {
     width: 400px;
     height: 500px;
-
+    margin: auto;
+    font-size: 20px;
   }
 </style>
 
 <template>
   <div class="container">
     <div id="top">
-      <img src="../../static/imgs/title.png" />
-      你好{{adname.adname}}{{adname.stid}}
-      <i id="home" class="glyphicon glyphicon-home"></i>
+      <center><h2>你好{{adname.adname}}{{adname.stid}}</h2></center>
     </div>
-    <div id="picture">
-      <span>商品名称</span>
-      <el-input v-model="gdname"></el-input>
-      <span>信息</span>
-      <el-input v-model="gtkeywords"></el-input>
-      <span>图片</span>
-      <input type="file" @change="getfile($event)" />
-      <span>青铜价格</span>
-      <el-input v-model="price1"></el-input>
-      <span>白银价格</span>
-      <el-input v-model="price2"></el-input>
-      <span>黄金价格</span>
-      <el-input v-model="price3"></el-input>
-      <span>白金价格</span>
-      <el-input v-model="price4"></el-input>
-      <span>钻石价格</span>
-      <el-input v-model="price5"></el-input>
-      <span>王者价格</span>
-      <el-input v-model="price6"></el-input>
+    <div id="info">
+      <b>商品名称</b>
+      <el-input v-model="gdname"></el-input><br /><br />
+      <b>信息</b>
+      <el-input v-model="gtkeywords"></el-input><br /><br />
+      <b>图片</b>
+      <input type="file" @change="getfile($event)" /><br /><br />
+      <b>青铜价格</b>
+      <el-input v-model="price1"></el-input><br /><br />
+      <b>白银价格</b>
+      <el-input v-model="price2"></el-input><br /><br />
+      <b>黄金价格</b>
+      <el-input v-model="price3"></el-input><br /><br />
+      <b>白金价格</b>
+      <el-input v-model="price4"></el-input><br /><br />
+      <b>钻石价格</b>
+      <el-input v-model="price5"></el-input><br /><br />
+      <b>王者价格</b>
+      <el-input v-model="price6"></el-input><br /><br />
       <br />
-      <el-button @click="insertgoods()">提交</el-button>
+      <center><el-button style="width: 250px; color: white;background-color: #3385FF;font-size: 24px;" @click="insertgoods()">提交</el-button></center>
     </div>
   </div>
 </template>
@@ -154,7 +146,7 @@
 
         });
       },
- 
+
       getsession() {
         var ob = this;
         var url = "http://192.168.1.103:8087/mgj/mgjstore/getsession"
