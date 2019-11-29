@@ -1,4 +1,9 @@
 <style>
+  thead tr>th {
+    height: 60px;
+    vertical-align: middle!important ;
+    text-align: center;
+  }
 </style>
 
 <template>
@@ -57,7 +62,7 @@
           }
         })
       },
-      faror(ofid,olid){
+      faror(ofid, olid) {
         var ob = this;
         var url = "http://127.0.0.1:8087/mgj/mgj/deletedelivergoods";
         $.ajax(url, {
@@ -65,9 +70,9 @@
             "withCredentials": true
           },
           dataType: "json",
-          data:{
-            "ofid":ofid,
-            "olid":olid
+          data: {
+            "ofid": ofid,
+            "olid": olid
           },
           success: function(result) {
             ob.list = result.information;

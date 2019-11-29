@@ -42,6 +42,11 @@ export default new Router({
         path: '/system/storeadd',
         name: 'Storeadd',
         component:Storeadd
+      },
+      {
+        path: '/system/orderby',
+        name: 'Orderby',
+        component: Orderby,
       }]
     },
 
@@ -89,11 +94,6 @@ export default new Router({
      	path: '/orderlist',
      	name: 'orderlist',
      	component: orderlist,
-    },
-    {
-     	path: '/Orderby',
-     	name: 'Orderby',
-     	component: Orderby,
     },
   ]
 })
