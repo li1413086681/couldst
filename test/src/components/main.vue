@@ -67,7 +67,6 @@
         <router-link to="/register">注册</router-link>
       </div>
     </div>
-    <imagesinfo></imagesinfo>
   </div>
 
 </template>
@@ -88,7 +87,7 @@
     methods: {
       login() {
         var ob = this;
-        var url = "http://192.168.1.103:8087/mgj/mgjstore/login"
+        var url = "http://127.0.0.1:8087/mgj/mgjstore/login"
         $.ajax(url, {
           data: {
             adname: ob.adname,

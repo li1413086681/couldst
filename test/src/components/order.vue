@@ -62,7 +62,7 @@
 					dataType:"json", 
 					success: function(result) {
 						ob.$router.push({
-							name:"main"
+							name:"main1"
 						})
 					}
 				});					

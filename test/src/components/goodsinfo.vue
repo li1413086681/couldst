@@ -96,7 +96,7 @@
 					data:{"gdid":ob.gdid},
 					dataType:"json",
 					success: function(result) {
-						ob.img="http://127.0.0.1:8080/firstweb/tp/"+result.gimgurl;
+						ob.img="http://127.0.0.1:8087/mgj/tp/"+result.gimgurl;
 						ob.name=result.gdname;
 						ob.price=result.price;
 					}

@@ -1,8 +1,4 @@
 <style>
-  .container {
-    width: 100%;
-    padding: 0px;
-  }
   #top{
     width: 100%;
     height: 90px;
@@ -19,19 +15,9 @@
     margin: auto;
     font-size: 20px;
   }
-  #fuge{
-    font-size: 20px;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-  }
 </style>
 
 <template>
-  <div class="container">
-    <div id="top">
-      <center><h2>你好{{adname.adname}}{{adname.stid}}</h2></center>
-    </div>
     <div id="info">
       <b>商品名称</b>
       <el-input v-model="gdname"></el-input><br /><br />
@@ -54,10 +40,6 @@
       <br />
       <center><el-button style="width: 250px; color: white;background-color: #3385FF;font-size: 24px;" @click="insertgoods()">提交</el-button></center>
     </div>
-    <div id="fuge">
-      <a href="http://127.0.0.1:8086/#/system">返回</a>
-    </div>
-  </div>
 </template>
 
 <script>

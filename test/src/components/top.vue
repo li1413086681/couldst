@@ -1,12 +1,12 @@
 <template>
-	<div id="top1" class="container">	
+	<div id="top1" class="container">
 		<div><a>关于我们</a></div>
 		<div class="div_top"><a>我的订单</a></div>
 		<div class="div_top"><i class="glyphicon glyphicon-shopping-cart"></i><a>商城</a></div>
 		<div @click="gotomain()" id="login_1"><i class="glyphicon glyphicon-home"></i><a>首页</a> </div>
 		<div @click="login()" id="login_1" v-if="user_1.length==0"><i class="glyphicon glyphicon-pencil"></i><a>注册</a> </div>
 		<div v-if="user_1.length!=0" @click="removesession()"><a id="jjss">注销</a></div>
-		<div v-if="user_1.length!=0"><i class="glyphicon glyphicon-user"></i><a>{{user_1.logname}}</a></div>		
+		<div v-if="user_1.length!=0"><i class="glyphicon glyphicon-user"></i><a>{{user_1.logname}}</a></div>
 		<br />
 	</div>
 </template>
@@ -21,7 +21,7 @@
 		methods:{
 			gotomain(){
 				this.$router.push({
-					name:"main"
+					name:"main1"
 				})
 			},
 			login(){
@@ -33,11 +33,11 @@
 				var ob=this;
 				var url="http://127.0.0.1:8087/mgj/mgj/getsession";
 				$.ajax(url,{
-					xhrFields: {"withCredentials": true}, 
-					data:{"keywords":ob.keywords}, 
-					dataType:"json", 
-					success: function(result) {						
-						ob.user_1=result;	
+					xhrFields: {"withCredentials": true},
+					data:{"keywords":ob.keywords},
+					dataType:"json",
+					success: function(result) {
+						ob.user_1=result;
 					}
 				});
 			},
@@ -45,11 +45,11 @@
 				var ob=this;
 				var url="http://127.0.0.1:8087/mgj/mgj/removesession";
 				$.ajax(url,{
-					xhrFields: {"withCredentials": true}, 
-					data:{"keywords":ob.keywords}, 
-					dataType:"json", 
-					success: function(result) {						
-						 
+					xhrFields: {"withCredentials": true},
+					data:{"keywords":ob.keywords},
+					dataType:"json",
+					success: function(result) {
+
 					}
 				});
 				ob.$router.go(0);

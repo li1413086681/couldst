@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Main1 from '@/components/main1'
+import main1 from '@/components/main1'
 import System from '@/components/system'
 import Storeadd from '@/components/storeadd'
 import Register from '@/components/register'
@@ -14,6 +14,9 @@ import cart from '@/components/cart'
 import order from '@/components/order'
 import orderlist from '@/components/orderlist'
 import Lunbo from '@/components/lunbo'
+import Orderby from '@/components/orderby'
+import Myshop from '@/components/myshop'
+
 
 Vue.use(Router)
 
@@ -25,8 +28,8 @@ export default new Router({
     },
     {
         path: '/',
-        name: 'Main1',
-        component: Main1
+        name: 'main1',
+        component: main1
       },
      {
       path: '/Lunbo',
@@ -36,13 +39,24 @@ export default new Router({
     {
       path: '/System',
       name: 'System',
-      component:System
+      component:System,
+      children: [{
+        path: '/system/storeadd',
+        name: 'Storeadd',
+        component:Storeadd
+      },
+      {
+        path: '/system/orderby',
+        name: 'Orderby',
+        component: Orderby,
+      },
+      {
+       	path: '/system/myshop',
+       	name: 'Myshop',
+       	component: Myshop,
+      },]
     },
-    {
-      path: '/Storeadd',
-      name: 'Storeadd',
-      component:Storeadd
-    },
+
     {
       path: '/Register',
       name: 'Register',
