@@ -97,7 +97,7 @@
               adname: ob.logname,
               adpassword: ob.password,
               stname: ob.storename,
-              stnum: ob.storenum,
+              stnum: ob.storetel,
               staddress: ob.storeaddress
             },
             method: "post",

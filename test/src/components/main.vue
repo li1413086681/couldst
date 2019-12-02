@@ -56,7 +56,7 @@
         <br />
         <br />
         <span>
-          <input class="in" type="password" placeholder="密码" v-model="adpassword" />
+          <input class="in" type="password" placeholder="密码" v-model="adpassword" @keyup.enter="login()" />
         </span>
         <br />
         <br />
