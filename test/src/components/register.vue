@@ -1,6 +1,7 @@
 <style>
-  .container{
-    width:100%;
+  #theone{
+	  width: 100%;
+    text-align: center;
   }
   #center{
     font-size: 20px;
@@ -11,14 +12,14 @@
   }
   #logname{
     position: absolute;
-    top: 70px;
-    right: 300px;
+    top: 100px;
+    right: 450px;
     color: gray;
   }
   #password{
     position: absolute;
-    right: 390px;
-    top:460px;
+    right: 550px;
+    top:480px;
     color: gray;
   }
   #sub{
@@ -33,7 +34,7 @@
 </style>
 
 <template>
-  <div class="container">
+  <div id="theone">
     <h2>商家注册</h2>
     <div id="center">
       <span>{{adnametext}}</span><br />
