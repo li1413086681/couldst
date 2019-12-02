@@ -47,7 +47,7 @@
       <b style="font-size: 25px;">商家信息管理系统</b>
       <div id="but">
         <button class="btn btn-warning">收&nbsp;&nbsp;藏&nbsp;&nbsp;夹</button><br /><br /><br />
-        <button class="btn btn-info">我的商品</button><br /><br /><br />
+        <button class="btn btn-info"><router-link to="/system/myshop" style="color: white;">我的商品</router-link></button><br /><br /><br />
         <button class="btn btn-success"><router-link to="/system/orderby" style="color: white;text-decoration: none;">订单处理</router-link></button><br /><br /><br />
         <button class="btn btn-danger">&nbsp;广&nbsp;&nbsp;告&nbsp;?&nbsp;</button><br /><br /><br />
 		    <button class="btn btn-default"><router-link to="/system/storeadd" style="text-decoration: none;">添加商品</router-link></button><br /><br /><br />

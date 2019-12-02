@@ -15,6 +15,8 @@ import order from '@/components/order'
 import orderlist from '@/components/orderlist'
 import Lunbo from '@/components/lunbo'
 import Orderby from '@/components/orderby'
+import Myshop from '@/components/myshop'
+
 
 Vue.use(Router)
 
@@ -47,7 +49,12 @@ export default new Router({
         path: '/system/orderby',
         name: 'Orderby',
         component: Orderby,
-      }]
+      },
+      {
+       	path: '/system/myshop',
+       	name: 'Myshop',
+       	component: Myshop,
+      },]
     },
 
     {

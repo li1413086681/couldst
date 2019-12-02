@@ -1,7 +1,7 @@
 <style>
   thead tr>th {
     height: 60px;
-    vertical-align: middle!important ;
+    vertical-align: middle !important;
     text-align: center;
   }
 </style>
@@ -63,7 +63,7 @@
           }
         })
       },
-      deletedelivergoods(ofid,olid){
+      deletedelivergoods(ofid, olid) {
         var ob = this;
         var url = "http://127.0.0.1:8087/mgj/mgj/deletedelivergoods";
         $.ajax(url, {
@@ -76,14 +76,14 @@
           },
           dataType: "json",
           success: function(result) {
-            console.log(111);
+            window.alert(222);
             window.$router.go(0);
           }
         })
       },
     },
-    mounted(){
-      var ob=this;
+    mounted() {
+      var ob = this;
       ob.selectod();
     }
   }
