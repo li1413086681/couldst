@@ -76,8 +76,8 @@
         	dataType:"json",
         	success: function(result) {
         		ob.st=result;
-            console.log(ob.st.Admin);
-            console.log(ob.st.information);
+            // console.log(ob.st.Admin);
+            // console.log(ob.st.information);
         	}
         });
       }

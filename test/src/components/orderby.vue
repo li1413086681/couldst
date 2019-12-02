@@ -35,7 +35,7 @@
         <th>{{a.gstext}}</th>
         <th>{{a.gdcount}}</th>
         <th>{{a.olid}}</th>
-        <th><button style="background-color:orange;" @click="faror(a.ofid,a.olid)">发货</button></th>
+        <th><button class="btn" @click="deletedelivergoods(a.ofid,a.olid)">发货</button></th>
       </tr>
     </tbody>
   </table>
@@ -59,27 +59,32 @@
           dataType: "json",
           success: function(result) {
             ob.list = result.information;
+            console.log(ob.list);
           }
         })
       },
-      faror(ofid, olid) {
+      deletedelivergoods(ofid,olid){
         var ob = this;
         var url = "http://127.0.0.1:8087/mgj/mgj/deletedelivergoods";
         $.ajax(url, {
           xhrFields: {
             "withCredentials": true
           },
-          dataType: "json",
           data: {
             "ofid": ofid,
             "olid": olid
           },
+          dataType: "json",
           success: function(result) {
-            ob.list = result.information;
+            console.log(111);
             window.$router.go(0);
           }
         })
       },
+    },
+    mounted(){
+      var ob=this;
+      ob.selectod();
     }
   }
 </script>
