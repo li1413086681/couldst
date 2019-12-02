@@ -90,7 +90,7 @@
       },
       register() {
         var ob = this;
-        var url = "http://192.168.1.103:8087/mgj/mgjstore/register"
+        var url = "http://127.0.0.1:8087/mgj/mgjstore/register"
         if (ob.adnametest) {
           $.ajax(url, {
             data: {
@@ -118,7 +118,7 @@
       },
       testregister() {
         var ob = this;
-        var url = "http://192.168.1.103:8087/mgj/mgjstore/testregister"
+        var url = "http://127.0.0.1:8087/mgj/mgjstore/testregister"
         $.ajax(url, {
           data: {
             adname: ob.logname,

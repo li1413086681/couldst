@@ -1,5 +1,5 @@
 <style>
-  .container{
+  #login_2{
     width:100%;
     padding: 0px;
   }
@@ -52,7 +52,7 @@
 </style>
 
 <template>
-	<div class="container">
+	<div class="container" id="login_2">
 		<div style="position: absolute;top: 20px;right: 250px;">
 		  <a class="tab" href="http://127.0.0.1:8086/#/main">切换为商家登录</a>
 		</div>
